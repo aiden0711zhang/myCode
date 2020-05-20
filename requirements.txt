@@ -1,0 +1,16 @@
+需求分析：
+	1.我的理解是，发货管理程序辅助船只运输系统完成货物的运输和管理。
+	2.货物的拆分，合并，要灵活，可根据船只可载重空间及排期计划方便拆分或合并运输。
+	3.货物拆分时，输入自定义的拆分比例进行拆分，并记录要运输的次数；
+	4.当在中途港口周转且载重空间允许时可以同一订单的拆分子项，合并运输。
+	
+	
+Demand analysis:
+
+1. It is my understanding that the shipment management procedure assists the vessel transportation system in the transportation and management of goods.
+
+2. The split and consolidation of goods shall be flexible, which can be easily split or consolidated according to the loadable space and scheduling plan of the vessel.
+
+3. When splitting goods, enter a user-defined splitting proportion to split and record the times to be transported;
+
+4. Split sub items of the same order and consolidate transportation when turnover at Midway port and load space allow.

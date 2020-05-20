@@ -1,0 +1,45 @@
+Test case: the main method of test class executes the test:
+	
+	public static void main(String[] args) {
+		Order order = new Order();
+		order.setOrderNo(1);
+		order.setOrderQuantity(100);
+		order.setShipCounter(0);
+		
+		Goods goods = new Goods();
+		goods.setGoodsId(1001);
+		goods.setOrderId(1);
+		goods.setWeight(100);
+		goods.setGoodsName("computer");
+		
+		ShipmentImpl s = new ShipmentImpl();
+		String splitRule="0.2:0.3:0.5";
+		//根拆分
+		try {
+			s.split(order, goods,splitRule);
+		} catch (Exception e) {
+			System.out.println("异常信息：:"+e.getMessage());
+			return;
+		}
+		System.out.println("childList:"+order.getChildList());
+		System.out.println("shipCounter:"+order.getShipCounter());
+		//合并
+		try {
+			s.merge(order, order.getChildList().get(1),order.getChildList().get(2));
+		} catch (Exception e) {
+			System.out.println("异常信息：:"+e.getMessage());
+			return;
+		}
+		System.out.println("childList:"+order.getChildList());
+		System.out.println("shipCounter:"+order.getShipCounter());
+		//子项再次拆分
+		try {
+			s.split(order, order.getChildList().get(1),splitRule);
+		} catch (Exception e) {
+			System.out.println("异常信息：:"+e.getMessage());
+			return;
+		}
+		System.out.println("子项再次拆分childList:"+order.getChildList());
+		System.out.println("子项再次拆分shipCounter:"+order.getShipCounter());
+		
+	}

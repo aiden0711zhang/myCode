@@ -1,0 +1,25 @@
+design:
+		1.设计使用spring+springMVC+Mybatis+database 架构，实际代码仅仅写了业务逻辑代码，没有引入依赖jar包。
+		2.设计订单实体类（Order）和货物对象(Goods)。
+		3.Order类包含属性：订单号，订单货物总重量，当前该订单货物子项集合，运输次数（同一艘船货物上船到下船算一次）。
+		4.Goods类包含属性：货物id，货物名称，订单号，货物重量。
+		5.Goods和Order 数据库中有对应数据表。GOODS表记录货物id和货物名称。和Order表一对多关系。
+		6.执行拆分操作，需前端传入自定义拆分比例，被拆分货物和订单（暂时把订单数据传入，后续引入框架和数据库后只需传订单号，订单数据从数据库拉取）。执行完拆分操作后
+		将更新后的订单数据更新到数据库。合并操作，需传入订单和要合并的货物子项，执行完将订单数据更新打数据库。
+		
+		
+		
+design:
+
+1. The design uses the Spring + springmvc + mybatis + database architecture. The actual code only writes the business logic code and does not introduce the dependent jar package.
+
+2. Design order and goods.
+
+3. The order class contains attributes: order number, total weight of order goods, sub item set of current order goods, and transportation times (once from the same ship to the next ship).
+
+4. The goods class contains attributes: goods ID, goods name, order number and goods weight.
+
+5. There are corresponding data tables in the goods and order databases. The goods table records the goods ID and goods name. One to many relationship with order table.
+
+6. For splitting operation, the user-defined splitting proportion shall be transferred to the front end to split goods and orders (the order data shall be transferred temporarily, and only the order number shall be transferred after the subsequent introduction of the framework and database, and the order data shall be pulled from the database). After performing the split operationUpdate the updated order data to the database. 
+In the consolidation operation, the order and the goods sub items to be consolidated need to be transferred, and the order data will be updated and printed in the database after the execution.
